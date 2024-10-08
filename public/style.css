@@ -1,7 +1,14 @@
 html,
-body,
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0 !important;
+}
+
 #root {
   min-height: 100vh;
   min-width: 100vw;
   margin: 0 !important;
+  display: flex;
+  flex-direction: column;
 }

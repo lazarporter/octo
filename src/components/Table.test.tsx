@@ -6,14 +6,20 @@ import { staticData } from '../assets/staticData';
 describe('Table', () => {
   it('renders loading state', () => {
     render(<Table data={[]} loading={true} error={null} />);
-    expect(screen.getByText('loading...')).toBeInTheDocument();
+    expect(screen.getByTestId('table-loading-spinner')).toBeInTheDocument();
   });
 
   it('renders error state', () => {
     render(
       <Table data={[]} loading={false} error={'The server is on fire.'} />
     );
+    expect(screen.getByTestId('table-error')).toBeInTheDocument();
     expect(screen.getByText('The server is on fire.')).toBeInTheDocument();
+  });
+
+  it('renders no data state', () => {
+    render(<Table data={[]} loading={false} error={null} />);
+    expect(screen.getByTestId('table-no-data')).toBeInTheDocument();
   });
 
   it('renders data', () => {
@@ -21,6 +27,8 @@ describe('Table', () => {
 
     const first = staticData[0];
     const last = staticData[staticData.length - 1];
+
+    expect(screen.getByTestId('table-data')).toBeInTheDocument();
     expect(screen.getByText((content) => content.includes(first._id)));
     expect(screen.getByText((content) => content.includes(last._id)));
   });

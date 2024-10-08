@@ -1,15 +1,16 @@
 import React, { memo } from 'react';
+import TableCell from '@mui/material/TableCell';
 import { Enriched, Owner } from '../../hooks/apiData.types';
 import TableCellEnriched from './TableCellEnriched';
 import TableCellOwner from './TableCellOwner';
 
 type TableCellData = Enriched | Owner | string;
 
-interface TableCellProps {
+interface CustomTableCellProps {
   data: TableCellData;
 }
 
-const TableCell: React.FC<TableCellProps> = ({ data }) => {
+const CustomTableCell: React.FC<CustomTableCellProps> = ({ data }) => {
   if (typeof data === 'object') {
     if ('isCrownJewel' in data) {
       return <TableCellEnriched data={data} />;
@@ -19,7 +20,7 @@ const TableCell: React.FC<TableCellProps> = ({ data }) => {
     }
   }
 
-  return <td data-testid="table-cell-string">{data}</td>;
+  return <TableCell data-testid="table-cell-string">{data}</TableCell>;
 };
 
-export default memo(TableCell);
+export default memo(CustomTableCell);

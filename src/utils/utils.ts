@@ -6,7 +6,7 @@ export default function sleep(ms: number) {
 
 export const getOwnerName = (owner: Owner): string | null => {
   if ('name' in owner) {
-    return owner.name || 'Unknown';
+    return owner.name;
   } else if ('owner' in owner) {
     return getOwnerName(owner.owner);
   }

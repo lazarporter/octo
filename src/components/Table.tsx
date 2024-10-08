@@ -1,46 +1,84 @@
+import React from 'react';
+import {
+  Table as MuiTable,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+  CircularProgress,
+  Typography,
+} from '@mui/material';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { APIData } from '../hooks/apiData.types';
+import CustomTableCell from './Cells/CustomTableCell';
 import { ApiRequest } from '../hooks/useApiData';
-import TableCell from './Cells/TableCell';
 
 export const Table: React.FC<ApiRequest> = ({ loading, data, error }) => {
   if (loading) {
-    // Todo make this a pretty component
-    return <div>loading...</div>;
+    return (
+      <TableContainer component={Paper} data-testid="table-loading-spinner">
+        <CircularProgress />
+      </TableContainer>
+    );
   }
 
   if (error) {
-    // Todo make this a pretty component
-    return <div>{error}</div>;
+    return (
+      <TableContainer component={Paper} data-testid="table-error">
+        <Typography
+          variant="h6"
+          color="error"
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            p: 2,
+          }}
+        >
+          <ErrorOutlineIcon sx={{ mr: 1 }} />
+          {error}
+        </Typography>
+      </TableContainer>
+    );
   }
 
   if (!Array.isArray(data) || data.length === 0) {
-    // Todo make this a pretty component
-    return <div>No data available</div>;
+    return (
+      <TableContainer component={Paper} data-testid="table-no-data">
+        <Typography variant="h6" sx={{ p: 2 }}>
+          No data available
+        </Typography>
+      </TableContainer>
+    );
   }
 
   const keys = Object.keys(data[0]) as (keyof APIData)[];
 
   return (
-    <table>
-      <thead>
-        <tr>
-          {keys.map((key) => (
-            <th key={key}>{key}</th>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {data.map((rowData) => (
-          <tr key={rowData._id}>
-            {keys.map((cellName) => (
-              <TableCell
-                key={`${rowData._id}-${cellName}`}
-                data={rowData[cellName]}
-              />
+    <TableContainer component={Paper} data-testid="table-data">
+      <MuiTable>
+        <TableHead>
+          <TableRow>
+            {keys.map((key) => (
+              <TableCell key={key}>{key}</TableCell>
             ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {data.map((rowData) => (
+            <TableRow key={rowData._id}>
+              {keys.map((cellName) => (
+                <CustomTableCell
+                  key={`${rowData._id}-${cellName}`}
+                  data={rowData[cellName]}
+                />
+              ))}
+            </TableRow>
+          ))}
+        </TableBody>
+      </MuiTable>
+    </TableContainer>
   );
 };
