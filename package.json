@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "prepare": "husky",
     "preview": "vite preview",
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": "eslint --fix",
