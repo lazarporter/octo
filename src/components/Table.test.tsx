@@ -2,8 +2,7 @@
 
 import { render, screen } from '@testing-library/react';
 import { Table } from './Table';
-import { staticData } from '../api/fetchData';
-
+import { staticData } from '../assets/staticData';
 describe('Table', () => {
   it('renders loading state', () => {
     render(<Table data={[]} loading={true} error={null} />);
