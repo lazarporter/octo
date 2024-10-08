@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import TableCellEnriched, { areEqual } from './TableCellEnriched';
+import TableCellEnriched from './TableCellEnriched';
 import { Enriched } from '../../hooks/apiData.types';
 
 describe('TableCellEnriched', () => {
@@ -29,12 +29,16 @@ describe('TableCellEnriched', () => {
     it('returns true when isCrownJewel is the same', () => {
       const prevProps = { data: { isCrownJewel: true } };
       const nextProps = { data: { isCrownJewel: true } };
+
+      const areEqual = (TableCellEnriched as any).compare;
       expect(areEqual(prevProps, nextProps)).toBe(true);
     });
 
     it('returns false when isCrownJewel is different', () => {
       const prevProps = { data: { isCrownJewel: true } };
       const nextProps = { data: { isCrownJewel: false } };
+
+      const areEqual = (TableCellEnriched as any).compare;
       expect(areEqual(prevProps, nextProps)).toBe(false);
     });
   });
