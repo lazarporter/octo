@@ -1,8 +1,8 @@
-interface Enriched {
+export interface Enriched {
   isCrownJewel: boolean;
 }
 
-type Owner =
+export type Owner =
   | {
       name: string | null;
     }

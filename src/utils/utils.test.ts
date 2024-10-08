@@ -1,4 +1,4 @@
-import sleep from './sleep';
+import sleep from './utils';
 
 describe('sleep utility fn', () => {
   it('should delay execution for the specified time', async () => {
