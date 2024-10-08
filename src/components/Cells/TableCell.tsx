@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Enriched, Owner } from '../../hooks/apiData.types';
 import TableCellEnriched from './TableCellEnriched';
 import TableCellOwner from './TableCellOwner';
@@ -22,4 +22,4 @@ const TableCell: React.FC<TableCellProps> = ({ data }) => {
   return <td data-testid="table-cell-string">{data}</td>;
 };
 
-export default TableCell;
+export default memo(TableCell);

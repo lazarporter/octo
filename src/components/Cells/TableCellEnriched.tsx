@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Enriched } from '../../hooks/apiData.types';
 
 interface TableCellEnrichedProps {
@@ -13,4 +13,11 @@ const TableCellEnriched: React.FC<TableCellEnrichedProps> = ({ data }) => (
   </>
 );
 
-export default TableCellEnriched;
+function areEqual(
+  prevProps: TableCellEnrichedProps,
+  nextProps: TableCellEnrichedProps
+) {
+  return prevProps.data.isCrownJewel === nextProps.data.isCrownJewel;
+}
+
+export default memo(TableCellEnriched, areEqual);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { Owner } from '../../hooks/apiData.types';
 import { getOwnerName } from '../../utils/utils';
 
@@ -12,4 +12,11 @@ const TableCellOwner: React.FC<TableCellOwnerProps> = ({ data }) => {
   return <td data-testid="table-cell-owner">{ownerName}</td>;
 };
 
-export default TableCellOwner;
+function areEqual(
+  prevProps: TableCellOwnerProps,
+  nextProps: TableCellOwnerProps
+) {
+  return getOwnerName(prevProps.data) === getOwnerName(nextProps.data);
+}
+
+export default memo(TableCellOwner, areEqual);
