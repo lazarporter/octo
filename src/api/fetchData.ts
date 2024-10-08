@@ -2,11 +2,11 @@ import { APIData } from '../hooks/apiData.types';
 import sleep from '../utils/sleep';
 
 export const fetchData = async () => {
-  await sleep(500); // simulate network request
+  await sleep(1000); // simulate network request
   return staticData;
 };
 
-const staticData: APIData[] = [
+export const staticData: APIData[] = [
   {
     _id: 'ff4a61f36fc2b5a6fc54233fb7f19cb3',
     enriched: {

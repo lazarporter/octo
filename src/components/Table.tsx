@@ -8,7 +8,7 @@ export const Table: React.FC<ApiRequest> = ({ loading, data, error }) => {
 
   if (error) {
     // Todo make this a pretty component
-    return <div>error: {error}</div>;
+    return <div>{error}</div>;
   }
 
   return <div>Table: {JSON.stringify(data)}</div>;

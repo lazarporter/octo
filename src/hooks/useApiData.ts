@@ -20,6 +20,8 @@ export const useApiData = (): ApiRequest => {
   useEffect(() => {
     (async () => {
       try {
+        setResponse({ ...initialRequest, loading: true });
+
         const res = await fetchData();
         setResponse({
           data: res,
