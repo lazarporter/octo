@@ -1,11 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import TableCellEnriched from './TableCellEnriched';
 import { Enriched } from '../../hooks/apiData.types';
+import { renderWithTable } from './CustomTableCell.test';
 
 describe('TableCellEnriched', () => {
   it('renders a jewel icon when isCrownJewel is true', () => {
     const data: Enriched = { isCrownJewel: true };
-    render(<TableCellEnriched data={data} />);
+    renderWithTable(<TableCellEnriched data={data} />);
 
     const cell = screen.getByTestId('table-cell-enriched');
     const iconElement = screen.getByTestId('crown-jewel');
@@ -16,7 +17,7 @@ describe('TableCellEnriched', () => {
 
   it('does not render a jewel icon when isCrownJewel is false', () => {
     const data: Enriched = { isCrownJewel: false };
-    render(<TableCellEnriched data={data} />);
+    renderWithTable(<TableCellEnriched data={data} />);
 
     const cell = screen.getByTestId('table-cell-enriched');
     const iconElement = screen.queryByTestId('crown-jewel');

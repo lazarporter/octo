@@ -11,6 +11,8 @@ export const getOwnerName = (owner: Owner): string | null => {
     return getOwnerName(owner.owner);
   }
 
-  // Todo: bad data, report (Sentry?)
+  reportError(
+    new Error(`Unknown owner type, recieved: ${JSON.stringify(owner)}`)
+  );
   return null;
 };

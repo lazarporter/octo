@@ -10,36 +10,17 @@ import {
   CircularProgress,
   Typography,
 } from '@mui/material';
-import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { APIData } from '../hooks/apiData.types';
 import CustomTableCell from './Cells/CustomTableCell';
-import { ApiRequest } from '../hooks/useApiData';
+import { useApiData } from '../hooks/useApiData';
 
-export const Table: React.FC<ApiRequest> = ({ loading, data, error }) => {
+export const Table: React.FC = () => {
+  const { loading, data } = useApiData();
+
   if (loading) {
     return (
       <TableContainer component={Paper} data-testid="table-loading-spinner">
         <CircularProgress />
-      </TableContainer>
-    );
-  }
-
-  if (error) {
-    return (
-      <TableContainer component={Paper} data-testid="table-error">
-        <Typography
-          variant="h6"
-          color="error"
-          sx={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            p: 2,
-          }}
-        >
-          <ErrorOutlineIcon sx={{ mr: 1 }} />
-          {error}
-        </Typography>
       </TableContainer>
     );
   }
