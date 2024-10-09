@@ -1,4 +1,4 @@
-import { Owner } from '../hooks/apiData.types';
+import { Owner } from '../types/apiData.types';
 import { ERROR_UNKNOWN_OWNER } from '../stringContants';
 import { logError } from './logError';
 

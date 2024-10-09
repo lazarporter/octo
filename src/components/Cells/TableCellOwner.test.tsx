@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import TableCellOwner from './TableCellOwner';
-import { Owner } from '../../hooks/apiData.types';
+import { Owner } from '../../types/apiData.types';
 import { renderWithTable } from './CustomTableCell.test';
 import * as utils from '../../utils/utils';
 import { TEST_IDS } from '../../stringContants';

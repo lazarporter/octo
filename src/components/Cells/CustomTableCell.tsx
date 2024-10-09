@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import TableCell from '@mui/material/TableCell';
-import { Enriched, Owner } from '../../hooks/apiData.types';
+import { Enriched, Owner } from '../../types/apiData.types';
 import TableCellEnriched from './TableCellEnriched';
 import TableCellOwner from './TableCellOwner';
 import { TEST_IDS } from '../../stringContants';

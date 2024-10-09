@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { APIData } from './apiData.types';
+import { APIData } from '../types/apiData.types';
 import { fetchData } from '../api/fetchData';
 import { useErrorBoundary } from 'react-error-boundary';
 import { logError } from '../utils/logError';

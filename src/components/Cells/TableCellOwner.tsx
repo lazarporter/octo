@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { Owner } from '../../hooks/apiData.types';
+import { Owner } from '../../types/apiData.types';
 import { getOwnerName } from '../../utils/utils';
 import TableCell from '@mui/material/TableCell';
 import { TEST_IDS } from '../../stringContants';

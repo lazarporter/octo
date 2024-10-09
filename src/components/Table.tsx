@@ -10,7 +10,7 @@ import {
   CircularProgress,
   Typography,
 } from '@mui/material';
-import { APIData } from '../hooks/apiData.types';
+import { APIData } from '../types/apiData.types';
 import CustomTableCell from './Cells/CustomTableCell';
 import { useApiData } from '../hooks/useApiData';
 import { TEST_IDS } from '../stringContants';

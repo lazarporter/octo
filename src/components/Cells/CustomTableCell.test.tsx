@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import CustomTableCell from './CustomTableCell';
-import { Enriched, Owner } from '../../hooks/apiData.types';
+import { Enriched, Owner } from '../../types/apiData.types';
 import { TEST_IDS } from '../../stringContants';
 
 export const renderWithTable = (component: React.ReactNode) => {

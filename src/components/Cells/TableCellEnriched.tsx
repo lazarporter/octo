@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 import DiamondIcon from '@mui/icons-material/Diamond';
-import { Enriched } from '../../hooks/apiData.types';
+import { Enriched } from '../../types/apiData.types';
 import TableCell from '@mui/material/TableCell';
 import { TEST_IDS } from '../../stringContants';
 

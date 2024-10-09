@@ -1,4 +1,4 @@
-import { APIData } from '../hooks/apiData.types';
+import { APIData } from '../types/apiData.types';
 
 export const staticData: APIData[] = [
   {
