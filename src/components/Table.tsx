@@ -12,8 +12,8 @@ import {
 } from '@mui/material';
 import { APIData } from '../types/apiData.types';
 import CustomTableCell from './Cells/CustomTableCell';
-import { useApiData } from '../hooks/useApiData';
 import { TABLE_NO_DATA_MESSAGE, TEST_IDS } from '../stringContants';
+import { useTableContext } from '../context/TableContext';
 
 const COLUMNS: { [key in keyof APIData]: string } = {
   _id: 'ID',
@@ -23,7 +23,7 @@ const COLUMNS: { [key in keyof APIData]: string } = {
 };
 
 export const Table: React.FC = () => {
-  const { loading, data } = useApiData();
+  const { loading, data } = useTableContext();
 
   if (loading) {
     return (
@@ -65,6 +65,7 @@ export const Table: React.FC = () => {
                 <CustomTableCell
                   key={`${rowData._id}-${cellName}`}
                   data={rowData[cellName]}
+                  id={rowData._id}
                 />
               ))}
             </TableRow>

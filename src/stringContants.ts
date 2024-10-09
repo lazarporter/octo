@@ -18,3 +18,10 @@ export const TEST_IDS = {
   TABLE_CELL_STRING: 'table-cell-string',
   CROWN_JEWEL: 'crown-jewel',
 };
+
+export const LOCAL_STORAGE_SAVED_EDITS = 'savedEdits';
+
+export const TOGGLE_EDIT_BUTTON_TEXT = {
+  SAVE: 'Save',
+  EDIT: 'Edit',
+};

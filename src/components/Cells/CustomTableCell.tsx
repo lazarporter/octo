@@ -8,13 +8,14 @@ import { TABLE_CELL_NO_DATA, TEST_IDS } from '../../stringContants';
 type TableCellData = Enriched | Owner | string;
 
 interface CustomTableCellProps {
+  id: string;
   data: TableCellData;
 }
 
-const CustomTableCell: React.FC<CustomTableCellProps> = ({ data }) => {
+const CustomTableCell: React.FC<CustomTableCellProps> = ({ id, data }) => {
   if (typeof data === 'object') {
     if ('isCrownJewel' in data) {
-      return <TableCellEnriched data={data} />;
+      return <TableCellEnriched id={id} data={data} />;
     }
     if ('name' in data || 'owner' in data) {
       return <TableCellOwner data={data} />;
