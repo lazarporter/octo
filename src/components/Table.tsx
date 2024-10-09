@@ -13,7 +13,14 @@ import {
 import { APIData } from '../types/apiData.types';
 import CustomTableCell from './Cells/CustomTableCell';
 import { useApiData } from '../hooks/useApiData';
-import { TEST_IDS } from '../stringContants';
+import { TABLE_NO_DATA_MESSAGE, TEST_IDS } from '../stringContants';
+
+const COLUMNS: { [key in keyof APIData]: string } = {
+  _id: 'ID',
+  assetName: 'Asset Name',
+  owner: 'Owner',
+  enriched: 'Crown Jewel',
+};
 
 export const Table: React.FC = () => {
   const { loading, data } = useApiData();
@@ -33,7 +40,7 @@ export const Table: React.FC = () => {
     return (
       <TableContainer component={Paper} data-testid={TEST_IDS.TABLE_NO_DATA}>
         <Typography variant="h6" sx={{ p: 2 }}>
-          No data available
+          {TABLE_NO_DATA_MESSAGE}
         </Typography>
       </TableContainer>
     );
@@ -47,7 +54,7 @@ export const Table: React.FC = () => {
         <TableHead>
           <TableRow>
             {keys.map((key) => (
-              <TableCell key={key}>{key}</TableCell>
+              <TableCell key={key}>{COLUMNS[key]}</TableCell>
             ))}
           </TableRow>
         </TableHead>

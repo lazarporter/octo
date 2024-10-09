@@ -5,6 +5,7 @@ export const INSTRUCTIONS =
 export const ERROR_GENERIC = 'Something went wrong.';
 export const ERROR_FETCH_DATA = 'The server lit on fire during data fetch';
 export const ERROR_UNKNOWN_OWNER = 'Unknown owner type, recieved: ';
+export const TABLE_NO_DATA_MESSAGE = 'No data available';
 
 export const TEST_IDS = {
   TABLE_LOADING_SPINNER: 'table-loading-spinner',
