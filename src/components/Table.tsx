@@ -13,13 +13,17 @@ import {
 import { APIData } from '../hooks/apiData.types';
 import CustomTableCell from './Cells/CustomTableCell';
 import { useApiData } from '../hooks/useApiData';
+import { TEST_IDS } from '../stringContants';
 
 export const Table: React.FC = () => {
   const { loading, data } = useApiData();
 
   if (loading) {
     return (
-      <TableContainer component={Paper} data-testid="table-loading-spinner">
+      <TableContainer
+        component={Paper}
+        data-testid={TEST_IDS.TABLE_LOADING_SPINNER}
+      >
         <CircularProgress />
       </TableContainer>
     );
@@ -27,7 +31,7 @@ export const Table: React.FC = () => {
 
   if (!Array.isArray(data) || data.length === 0) {
     return (
-      <TableContainer component={Paper} data-testid="table-no-data">
+      <TableContainer component={Paper} data-testid={TEST_IDS.TABLE_NO_DATA}>
         <Typography variant="h6" sx={{ p: 2 }}>
           No data available
         </Typography>
@@ -38,7 +42,7 @@ export const Table: React.FC = () => {
   const keys = Object.keys(data[0]) as (keyof APIData)[];
 
   return (
-    <TableContainer component={Paper} data-testid="table-data">
+    <TableContainer component={Paper} data-testid={TEST_IDS.TABLE_DATA}>
       <MuiTable>
         <TableHead>
           <TableRow>

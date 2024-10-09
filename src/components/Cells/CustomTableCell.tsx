@@ -3,6 +3,7 @@ import TableCell from '@mui/material/TableCell';
 import { Enriched, Owner } from '../../hooks/apiData.types';
 import TableCellEnriched from './TableCellEnriched';
 import TableCellOwner from './TableCellOwner';
+import { TEST_IDS } from '../../stringContants';
 
 type TableCellData = Enriched | Owner | string;
 
@@ -20,7 +21,7 @@ const CustomTableCell: React.FC<CustomTableCellProps> = ({ data }) => {
     }
   }
 
-  return <TableCell data-testid="table-cell-string">{data}</TableCell>;
+  return <TableCell data-testid={TEST_IDS.TABLE_CELL_STRING}>{data}</TableCell>;
 };
 
 export default memo(CustomTableCell);

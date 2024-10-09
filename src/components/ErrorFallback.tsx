@@ -1,12 +1,13 @@
 import { Box, Button, Paper, Typography } from '@mui/material';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { FallbackProps } from 'react-error-boundary';
+import { ERROR_GENERIC, TEST_IDS } from '../stringContants';
 
 export const ErrorFallback: React.FC<FallbackProps> = ({
   error,
   resetErrorBoundary,
 }) => (
-  <Box component={Paper} data-testid="error-fallback">
+  <Box component={Paper} data-testid={TEST_IDS.ERROR_FALLBACK}>
     <Typography
       variant="h6"
       color="error"
@@ -18,7 +19,7 @@ export const ErrorFallback: React.FC<FallbackProps> = ({
       }}
     >
       <ErrorOutlineIcon sx={{ mr: 1 }} />
-      {error?.message ?? 'Something went wrong.'}
+      {error?.message ?? ERROR_GENERIC}
     </Typography>
     <Button onClick={resetErrorBoundary}>Try again</Button>
   </Box>

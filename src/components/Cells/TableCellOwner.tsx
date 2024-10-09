@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { Owner } from '../../hooks/apiData.types';
 import { getOwnerName } from '../../utils/utils';
 import TableCell from '@mui/material/TableCell';
+import { TEST_IDS } from '../../stringContants';
 
 interface TableCellOwnerProps {
   data: Owner;
@@ -10,7 +11,9 @@ interface TableCellOwnerProps {
 const TableCellOwner: React.FC<TableCellOwnerProps> = ({ data }) => {
   const ownerName = getOwnerName(data);
 
-  return <TableCell data-testid="table-cell-owner">{ownerName}</TableCell>;
+  return (
+    <TableCell data-testid={TEST_IDS.TABLE_CELL_OWNER}>{ownerName}</TableCell>
+  );
 };
 
 function areEqual(
