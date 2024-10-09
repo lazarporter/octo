@@ -18,8 +18,8 @@ import { TABLE_NO_DATA_MESSAGE, TEST_IDS } from '../stringContants';
 const COLUMNS: { [key in keyof APIData]: string } = {
   _id: 'ID',
   assetName: 'Asset Name',
-  owner: 'Owner',
-  enriched: 'Crown Jewel',
+  owner: 'Owner Name',
+  enriched: 'Is Crown Jewel',
 };
 
 export const Table: React.FC = () => {

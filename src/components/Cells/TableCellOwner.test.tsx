@@ -3,7 +3,7 @@ import TableCellOwner from './TableCellOwner';
 import { Owner } from '../../types/apiData.types';
 import { renderWithTable } from './CustomTableCell.test';
 import * as utils from '../../utils/utils';
-import { TEST_IDS } from '../../stringContants';
+import { TABLE_CELL_NO_DATA, TEST_IDS } from '../../stringContants';
 
 jest.mock('../../utils/utils', () => ({
   getOwnerName: jest.fn(),
@@ -25,6 +25,15 @@ describe('TableCellOwner', () => {
 
     const cellElement = screen.getByTestId(TEST_IDS.TABLE_CELL_OWNER);
     expect(cellElement).toHaveTextContent('Lazer');
+  });
+
+  it('renders fallback for missing owner name', () => {
+    (utils.getOwnerName as jest.Mock).mockReturnValue(null);
+
+    renderWithTable(<TableCellOwner data={mockOwner} />);
+
+    const cellElement = screen.getByTestId(TEST_IDS.TABLE_CELL_OWNER);
+    expect(cellElement).toHaveTextContent(TABLE_CELL_NO_DATA);
   });
 
   it('calls getOwnerName with the correct data', () => {
