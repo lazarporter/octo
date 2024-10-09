@@ -1,4 +1,6 @@
 import { Owner } from '../hooks/apiData.types';
+import { ERROR_UNKNOWN_OWNER } from '../stringContants';
+import { logError } from './logError';
 
 export default function sleep(ms: number) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -11,8 +13,6 @@ export const getOwnerName = (owner: Owner): string | null => {
     return getOwnerName(owner.owner);
   }
 
-  reportError(
-    new Error(`Unknown owner type, recieved: ${JSON.stringify(owner)}`)
-  );
+  logError(new Error(`${ERROR_UNKNOWN_OWNER} ${JSON.stringify(owner)}`));
   return null;
 };

@@ -2,7 +2,6 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 import { fetchData } from './api/fetchData';
 
-// Mock the fetchData function
 jest.mock('./api/fetchData');
 
 const TEST_ERROR_MSG = 'Test error';

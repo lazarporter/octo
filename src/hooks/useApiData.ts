@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { APIData } from './apiData.types';
 import { fetchData } from '../api/fetchData';
 import { useErrorBoundary } from 'react-error-boundary';
+import { logError } from '../utils/logError';
 
 export interface ApiRequest {
   data: APIData[];
@@ -34,7 +35,7 @@ export const useApiData = (): ApiRequest => {
         setResponse({
           ...initialRequest,
         });
-        reportError(err as Error);
+        logError(err as Error);
       }
     })();
   }, [showBoundary]);
