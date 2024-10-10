@@ -14,9 +14,9 @@ import CustomTableCell from './Cells/CustomTableCell';
 import { TEST_IDS } from '../stringConstants';
 
 const COLUMNS: { [key in keyof APIData]: string } = {
-  _id: 'ID',
-  assetName: 'Asset Name',
-  owner: 'Owner Name',
+  _id: 'id',
+  assetName: 'asset name',
+  owner: 'owner name',
   enriched: 'Is Crown Jewel',
 };
 

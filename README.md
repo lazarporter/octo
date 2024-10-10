@@ -9,7 +9,9 @@ npm run dev
 
 # Testing
 
-This repo uses [Jest](https://jestjs.io/) for testing. The convention is to put each component's test file next to the component file.
+This repo uses [Jest](https://jestjs.io/) for unit testing and Cypress for end-to-end testing. The convention is to put each component's unit test file next to the component file.
+
+## Jest unit tests
 
 ```bash
 npm test
@@ -21,7 +23,15 @@ npm run test:watch
 npm run test:coverage
 ```
 
-<img src="./src/assets/test-coverage.png"  width="400"/>
+## Cypress end-to-end tests
+
+```bash
+# Run headless
+npm run cypress:run
+
+# Run with Cypress app and view the tests in your browser
+npm run cypress:open
+```
 
 # Code Quality
 
