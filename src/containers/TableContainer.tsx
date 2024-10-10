@@ -10,7 +10,7 @@ import {
   INSTRUCTIONS,
   TABLE_NO_DATA_MESSAGE,
   TEST_IDS,
-} from '../stringContants';
+} from '../stringConstants';
 import { useTableContext } from '../context/TableContext';
 import { Table } from '../components/Table';
 

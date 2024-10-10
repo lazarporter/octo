@@ -1,6 +1,6 @@
 import { ERROR_FETCH_DATA_CHANCE } from '../../src/api/fetchData';
 import { staticData } from '../../src/assets/staticData';
-import { TEST_IDS } from '../../src/stringContants';
+import { TEST_IDS } from '../../src/stringConstants';
 
 describe('Table tests', () => {
   beforeEach(() => {

@@ -1,7 +1,7 @@
 import { render, fireEvent, screen } from '@testing-library/react';
 import { TableCellEnrichedEdit } from './TableCellEnrichedEdit';
 import { initialTableContext, TableContext } from '../../context/TableContext';
-import { TEST_IDS } from '../../stringContants';
+import { TEST_IDS } from '../../stringConstants';
 
 describe('TableCellEnrichedEdit', () => {
   const mockHandleStageEdit = jest.fn();

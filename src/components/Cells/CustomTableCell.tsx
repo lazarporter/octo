@@ -3,7 +3,7 @@ import TableCell from '@mui/material/TableCell';
 import { Enriched, Owner } from '../../types/apiData.types';
 import TableCellEnriched from './TableCellEnriched';
 import TableCellOwner from './TableCellOwner';
-import { TABLE_CELL_NO_DATA, TEST_IDS } from '../../stringContants';
+import { TABLE_CELL_NO_DATA, TEST_IDS } from '../../stringConstants';
 
 type TableCellData = Enriched | Owner | string;
 

@@ -1,5 +1,5 @@
 import { Owner } from '../types/apiData.types';
-import { ERROR_UNKNOWN_OWNER } from '../stringContants';
+import { ERROR_UNKNOWN_OWNER } from '../stringConstants';
 import { logError } from './logError';
 
 export default function sleep(ms: number) {

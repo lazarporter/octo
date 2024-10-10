@@ -3,7 +3,7 @@ import { initialTableContext, TableContext } from './TableContext';
 import { useApiData } from '../hooks/useApiData';
 import { APIData } from '../types/apiData.types';
 import { StagedEdits } from './tableContext.types';
-import { LOCAL_STORAGE_SAVED_EDITS } from '../stringContants';
+import { LOCAL_STORAGE_SAVED_EDITS } from '../stringConstants';
 import { logError } from '../utils/logError';
 
 export const TableContextProvider: React.FC<{ children: React.ReactNode }> = ({

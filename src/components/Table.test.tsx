@@ -4,7 +4,7 @@ import { render, screen } from '@testing-library/react';
 import { Table } from './Table';
 import { staticData } from '../assets/staticData';
 
-import { TEST_IDS } from '../stringContants';
+import { TEST_IDS } from '../stringConstants';
 
 describe('Table', () => {
   it('renders data', () => {

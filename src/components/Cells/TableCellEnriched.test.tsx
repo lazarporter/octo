@@ -2,7 +2,7 @@ import { screen } from '@testing-library/react';
 import TableCellEnriched from './TableCellEnriched';
 import { Enriched } from '../../types/apiData.types';
 import { renderWithTable } from './CustomTableCell.test';
-import { TEST_IDS } from '../../stringContants';
+import { TEST_IDS } from '../../stringConstants';
 
 describe('TableCellEnriched', () => {
   it('renders a jewel icon when isCrownJewel is true', () => {

@@ -11,7 +11,7 @@ import {
 import { APIData } from '../types/apiData.types';
 import CustomTableCell from './Cells/CustomTableCell';
 
-import { TEST_IDS } from '../stringContants';
+import { TEST_IDS } from '../stringConstants';
 
 const COLUMNS: { [key in keyof APIData]: string } = {
   _id: 'ID',

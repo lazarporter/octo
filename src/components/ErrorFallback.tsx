@@ -1,7 +1,7 @@
 import { Box, Button, Paper, Typography } from '@mui/material';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 import { FallbackProps } from 'react-error-boundary';
-import { ERROR_GENERIC, TEST_IDS } from '../stringContants';
+import { ERROR_GENERIC, TEST_IDS } from '../stringConstants';
 
 export const ErrorFallback: React.FC<FallbackProps> = ({
   error,

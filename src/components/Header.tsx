@@ -1,5 +1,5 @@
 import { Box, Typography } from '@mui/material';
-import { APP_SUBTITLE, APP_TITLE } from '../stringContants';
+import { APP_SUBTITLE, APP_TITLE } from '../stringConstants';
 
 export const Header: React.FC = () => (
   <Box sx={{ padding: 2, backgroundColor: '#f5f5f5', marginBottom: 2 }}>

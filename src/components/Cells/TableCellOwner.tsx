@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { Owner } from '../../types/apiData.types';
 import { getOwnerName } from '../../utils/utils';
 import TableCell from '@mui/material/TableCell';
-import { TABLE_CELL_NO_DATA, TEST_IDS } from '../../stringContants';
+import { TABLE_CELL_NO_DATA, TEST_IDS } from '../../stringConstants';
 
 interface TableCellOwnerProps {
   data: Owner;

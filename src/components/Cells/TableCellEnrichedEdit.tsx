@@ -1,5 +1,5 @@
 import { SelectChangeEvent, TableCell, Select, MenuItem } from '@mui/material';
-import { TEST_IDS } from '../../stringContants';
+import { TEST_IDS } from '../../stringConstants';
 import { Enriched } from '../../types/apiData.types';
 import { useTableContext } from '../../context/TableContext';
 import { useState } from 'react';

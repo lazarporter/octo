@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import { useTableContext } from '../context/TableContext';
-import { TOGGLE_EDIT_BUTTON_TEXT } from '../stringContants';
+import { TOGGLE_EDIT_BUTTON_TEXT } from '../stringConstants';
 import { Edit, Save } from '@mui/icons-material';
 
 export const EditToggleButton = () => {

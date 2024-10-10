@@ -1,5 +1,5 @@
 import { staticData } from '../assets/staticData';
-import { ERROR_FETCH_DATA } from '../stringContants';
+import { ERROR_FETCH_DATA } from '../stringConstants';
 import sleep from '../utils/utils';
 
 export const ERROR_FETCH_DATA_CHANCE = 0.2;

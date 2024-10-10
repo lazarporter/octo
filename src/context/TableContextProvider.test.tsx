@@ -6,7 +6,7 @@ import { staticData as mockApiData } from '../assets/staticData';
 import { fetchData } from '../api/fetchData';
 import { ErrorBoundary } from 'react-error-boundary';
 import { ErrorFallback } from '../components/ErrorFallback';
-import { TEST_IDS } from '../stringContants';
+import { TEST_IDS } from '../stringConstants';
 
 jest.mock('../api/fetchData');
 const mockErrorHandler = jest.fn();

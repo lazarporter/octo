@@ -1,5 +1,5 @@
 import { ERROR_FETCH_DATA_CHANCE } from '../../src/api/fetchData';
-import { APP_TITLE } from '../../src/stringContants';
+import { APP_TITLE } from '../../src/stringConstants';
 
 describe('Application', () => {
   it('visits the home page', () => {

@@ -6,7 +6,7 @@ import {
   TEST_IDS,
   TABLE_NO_DATA_MESSAGE,
   INSTRUCTIONS,
-} from '../stringContants';
+} from '../stringConstants';
 import { staticData } from '../assets/staticData';
 
 jest.mock('../context/TableContext', () => ({
