@@ -26,10 +26,13 @@ npm run test:coverage
 ## Cypress end-to-end tests
 
 ```bash
-# Run headless
+# First start the dev server
+npm run dev
+
+# Then either Run headless
 npm run cypress:run
 
-# Run with Cypress app and view the tests in your browser
+# Or run with Cypress app and view the tests in your browser
 npm run cypress:open
 ```
 
