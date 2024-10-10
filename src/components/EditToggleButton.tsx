@@ -1,6 +1,6 @@
 import { Button } from '@mui/material';
 import { useTableContext } from '../context/TableContext';
-import { TOGGLE_EDIT_BUTTON_TEXT } from '../stringConstants';
+import { TEST_IDS, TOGGLE_EDIT_BUTTON_TEXT } from '../stringConstants';
 import { Edit, Save } from '@mui/icons-material';
 
 export const EditToggleButton = () => {
@@ -14,6 +14,7 @@ export const EditToggleButton = () => {
       variant={editMode ? 'contained' : 'outlined'}
       onClick={editMode ? commitStagedEdits : () => toggleEditMode(!editMode)}
       startIcon={editMode ? <Save /> : <Edit />}
+      data-testid={TEST_IDS.EDIT_TOGGLE_BUTTON}
     >
       {text}
     </Button>

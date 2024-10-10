@@ -9,6 +9,7 @@ export const TABLE_NO_DATA_MESSAGE = 'No data available';
 export const TABLE_CELL_NO_DATA = 'N/A';
 
 export const TEST_IDS = {
+  EDIT_TOGGLE_BUTTON: 'edit-toggle-button',
   TABLE_LOADING_SPINNER: 'table-loading-spinner',
   TABLE_NO_DATA: 'table-no-data',
   TABLE_DATA: 'table-data',
