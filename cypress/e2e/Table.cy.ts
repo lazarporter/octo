@@ -53,43 +53,56 @@ describe('Table tests', () => {
       );
     });
 
-    it.skip('clicking the save button commits the staged edits', () => {
+    it('clicking the save button commits the staged edits', () => {
       const originallyFalseRow = staticData.find(
         (row) => !row.enriched.isCrownJewel
       );
+
+      const findInsideOriginalRow = (callback) =>
+        cy
+          .get(`tr:contains("${originallyFalseRow._id}")`)
+          .first()
+          .within(callback);
 
       cy.visit('/');
       cy.contains('button', TOGGLE_EDIT_BUTTON_TEXT.EDIT).click();
 
       // Change the originally false row to true
-      cy.get(`tr:contains("${originallyFalseRow._id}")`)
-        .first()
-        .within(() => {
-          cy.get(
-            `[data-testid="${TEST_IDS.TABLE_CELL_ENRICHED_EDIT}"]`
-          ).click();
-        });
+      findInsideOriginalRow(() => {
+        cy.get(`[data-testid="${TEST_IDS.TABLE_CELL_ENRICHED_EDIT}"]`).click();
+      });
+
       cy.get('li').contains('True').click();
 
       // Verify the change in the dropdown (in edit mode, before saving)
-      cy.get(`tr:contains("${originallyFalseRow._id}")`)
-        .first()
-        .within(() => {
-          cy.get(`[data-testid="${TEST_IDS.TABLE_CELL_ENRICHED_EDIT}"]`).should(
-            'have.value',
-            'true'
-          );
-        });
+      findInsideOriginalRow(() => {
+        cy.get(`[data-testid="${TEST_IDS.TABLE_CELL_ENRICHED_EDIT}"]`)
+          .find('[role="combobox"]')
+          .should('contain.text', 'True');
+      });
 
       // save the change
       cy.contains('button', TOGGLE_EDIT_BUTTON_TEXT.SAVE).click();
 
       // Verify the change in the table after saving (out of edit mode)
-      cy.get(`tr:contains("${originallyFalseRow._id}")`)
-        .first()
-        .within(() => {
-          cy.get(`[data-testid="${TEST_IDS.CROWN_JEWEL}"]`).should('exist');
-        });
+      findInsideOriginalRow(() => {
+        cy.get(`[data-testid="${TEST_IDS.CROWN_JEWEL}"]`).should('exist');
+      });
+
+      // Verify it persists after a refresh
+      cy.reload();
+      findInsideOriginalRow(() => {
+        cy.get(`[data-testid="${TEST_IDS.CROWN_JEWEL}"]`).should('exist');
+      });
+
+      // Verify it persists even in edit mode
+      cy.contains('button', TOGGLE_EDIT_BUTTON_TEXT.EDIT).click();
+
+      findInsideOriginalRow(() => {
+        cy.get(`[data-testid="${TEST_IDS.TABLE_CELL_ENRICHED_EDIT}"]`)
+          .find('[role="combobox"]')
+          .should('contain.text', 'True');
+      });
     });
   });
 
