@@ -1,6 +1,6 @@
 import { ERROR_FETCH_DATA_CHANCE } from '../../src/api/fetchData';
 import { staticData } from '../../src/assets/staticData';
-import { TEST_IDS } from '../../src/stringConstants';
+import { ERROR_FETCH_DATA, TEST_IDS } from '../../src/stringConstants';
 
 describe('Table tests', () => {
   beforeEach(() => {
@@ -31,6 +31,12 @@ describe('Table tests', () => {
           () => ERROR_FETCH_DATA_CHANCE - 0.1
         );
       });
+
+      Cypress.on('uncaught:exception', (err) => {
+        if (err.message.includes(ERROR_FETCH_DATA)) {
+          return false;
+        }
+      });
     });
 
     it('displays error message', () => {
@@ -40,6 +46,7 @@ describe('Table tests', () => {
       cy.get(`[data-testid="${TEST_IDS.ERROR_FALLBACK}"]`, {
         timeout: 2000,
       }).should('be.visible');
+      cy.contains('h6', ERROR_FETCH_DATA).should('be.visible');
     });
   });
 });
