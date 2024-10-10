@@ -5,7 +5,7 @@ export const initialTableContext: TableContextType = {
   data: [],
   setData: () => {},
   editMode: false,
-  setEditMode: () => {},
+  toggleEditMode: () => {},
   handleStageEdit: () => {},
   commitStagedEdits: () => {},
   loading: false,

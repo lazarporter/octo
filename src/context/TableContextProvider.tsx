@@ -19,6 +19,10 @@ export const TableContextProvider: React.FC<{ children: React.ReactNode }> = ({
     setStagedEdits((prev) => ({ ...prev, [id]: nextVal }));
   }
 
+  function toggleEditMode() {
+    setEditMode((prev) => !prev);
+  }
+
   const commitStagedEdits = useCallback(() => {
     try {
       const savedEdits = JSON.parse(
@@ -66,7 +70,7 @@ export const TableContextProvider: React.FC<{ children: React.ReactNode }> = ({
         data,
         setData,
         editMode,
-        setEditMode,
+        toggleEditMode,
         handleStageEdit,
         commitStagedEdits,
         loading,
