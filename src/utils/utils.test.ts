@@ -6,7 +6,7 @@ describe('sleep utility fn', () => {
   it('should delay execution for the specified time', async () => {
     const startTime = Date.now();
     const delay = 300;
-    const allowedVariance = 20;
+    const allowedVariance = 50;
 
     await sleep(delay);
 

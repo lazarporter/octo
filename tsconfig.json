@@ -7,7 +7,15 @@
   "compilerOptions": {
     "jsx": "react-jsx",
     "esModuleInterop": true,
-    "types": ["jest", "node", "@testing-library/jest-dom"]
+    "types": ["cypress", "jest", "node", "@testing-library/jest-dom"],
+    "target": "ES5",
+    "lib": ["es5", "dom"]
   },
-  "include": ["src", "**/*.ts", "**/*.tsx"]
+  "include": [
+    "src",
+    "**/*.ts",
+    "**/*.tsx",
+    "old.cypress/**/*.ts",
+    "cypress.config.js"
+  ]
 }
