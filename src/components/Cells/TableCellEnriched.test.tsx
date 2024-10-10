@@ -7,7 +7,7 @@ import { TEST_IDS } from '../../stringContants';
 describe('TableCellEnriched', () => {
   it('renders a jewel icon when isCrownJewel is true', () => {
     const data: Enriched = { isCrownJewel: true };
-    renderWithTable(<TableCellEnriched data={data} />);
+    renderWithTable(<TableCellEnriched id="1" data={data} />);
 
     const cell = screen.getByTestId(TEST_IDS.TABLE_CELL_ENRICHED);
     const iconElement = screen.getByTestId(TEST_IDS.CROWN_JEWEL);
@@ -18,7 +18,7 @@ describe('TableCellEnriched', () => {
 
   it('does not render a jewel icon when isCrownJewel is false', () => {
     const data: Enriched = { isCrownJewel: false };
-    renderWithTable(<TableCellEnriched data={data} />);
+    renderWithTable(<TableCellEnriched id="1" data={data} />);
 
     const cell = screen.getByTestId(TEST_IDS.TABLE_CELL_ENRICHED);
     const iconElement = screen.queryByTestId(TEST_IDS.CROWN_JEWEL);
