@@ -9,13 +9,11 @@ import {
 } from '../stringContants';
 import { staticData } from '../assets/staticData';
 
-// Mock the useTableContext hook
 jest.mock('../context/TableContext', () => ({
   ...jest.requireActual('../context/TableContext'),
   useTableContext: jest.fn(),
 }));
 
-// Add a mock error handler
 const mockErrorHandler = jest.fn();
 
 describe('TableContainer', () => {
@@ -23,10 +21,14 @@ describe('TableContainer', () => {
     '../context/TableContext'
   ).useTableContext;
 
+  beforeEach(() => {
+    mockUseTableContext.mockReset();
+  });
+
   const renderWithErrorBoundary = (component: React.ReactNode) => {
     return render(
       <ErrorBoundary
-        FallbackComponent={() => <div>Error</div>}
+        FallbackComponent={() => <div>I'm never rendered</div>}
         onError={mockErrorHandler}
       >
         <TableContextProvider>{component}</TableContextProvider>

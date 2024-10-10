@@ -14,6 +14,7 @@ export const TEST_IDS = {
   TABLE_DATA: 'table-data',
   ERROR_FALLBACK: 'error-fallback',
   TABLE_CELL_ENRICHED: 'table-cell-enriched',
+  TABLE_CELL_ENRICHED_EDIT: 'table-cell-enriched-edit',
   TABLE_CELL_OWNER: 'table-cell-owner',
   TABLE_CELL_STRING: 'table-cell-string',
   CROWN_JEWEL: 'crown-jewel',

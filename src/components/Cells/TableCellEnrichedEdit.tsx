@@ -22,7 +22,7 @@ export const TableCellEnrichedEdit: React.FC<TableCellEnrichedEditProps> = ({
   };
 
   return (
-    <TableCell data-testid={TEST_IDS.TABLE_CELL_ENRICHED} align="left">
+    <TableCell data-testid={TEST_IDS.TABLE_CELL_ENRICHED_EDIT} align="left">
       <Select value={value} onChange={handleChange}>
         <MenuItem value={'true'}>True</MenuItem>
         <MenuItem value={'false'}>False</MenuItem>
